@@ -11,11 +11,11 @@ struct InfoPanelView: View {
 var scale:CGFloat
 var offset:CGSize
 
-@State private var isInfoPanelVisible : Bool = false
+@State private var isInfoPanelVisible : Bool = true
     
 var body: some View {
         HStack{
-        
+            
             // MARK: - hotspot
             Image(systemName:"circle.circle")
                 .symbolRenderingMode(.hierarchical)
@@ -51,7 +51,7 @@ var body: some View {
             .background(.ultraThinMaterial)
             .cornerRadius(8)
             .frame(maxWidth:420)
-            .opacity(isInfoPanelVisible ? 0 : 1)
+            .opacity(isInfoPanelVisible ? 1 : 0)
             
             Spacer()
         }
@@ -60,7 +60,7 @@ var body: some View {
 
 struct InfoPanelView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoPanelView(scale: 1, offset: .zero).preferredColorScheme(.dark)
+        InfoPanelView(scale: 1, offset: .zero).preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)
             .padding()
     }
